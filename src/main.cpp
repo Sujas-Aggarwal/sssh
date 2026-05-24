@@ -52,6 +52,11 @@ void core(){
     return;
   }
 
+  std::string executable = func;
+  if (func.substr(0,2)!="./"){
+    executable = "./" + func;
+  }
+
   //Now we will analyse command here
   // Right now, lets just work on getting single commands get working
   if (func=="echo"){
@@ -60,8 +65,12 @@ void core(){
   else if (func=="type"){
     type(args);
   }
-  else if (isExecutable(func.c_str())){ // executing external commands
-    execute(command.c_str());
+  else if (isExecutable(executable.c_str())){ // executing external commands
+    std::string exec_command = command;
+    if (command.substr(0,2)!="./"){
+      exec_command = "./" + command;
+    }
+    execute(exec_command.c_str());
   }
   else if (command==""){
     return;
