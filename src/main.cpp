@@ -2,26 +2,12 @@
 #include <string>
 #include<set>
 #include <commands/echo.h>
+#include <commands/type.h>
+#include <globals/variables.h>
 
-bool LOOP = true;
-
-const std::set<std::string> INBUILD_COMMANDS = {"echo","type","exit"};
-
-// void echo(std::string arg){
-//   std::cout<<arg<<std::endl;
-// }
 
 void notFound(std::string command){
     std::cout<<command<<": command not found"<<std::endl;
-}
-
-void type(std::string arg){
-  if (INBUILD_COMMANDS.find(arg)!=INBUILD_COMMANDS.end()){
-    std::cout << arg << " is a shell builtin"<<std::endl;
-  }
-  else{
-    std::cout<<arg<<": not found"<<std::endl;
-  }
 }
 
 void core(){
