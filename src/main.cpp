@@ -3,6 +3,7 @@
 #include<set>
 #include <commands/echo.h>
 #include <commands/type.h>
+#include <commands/pwd.h>
 #include <globals/variables.h>
 #include <helper/executer.h>
 #include <vector>
@@ -61,6 +62,9 @@ void core(){
   }
   else if (func=="type"){
     type(args);
+  }
+  else if (func=="pwd"){
+    pwd();
   }
   else if (exec_path!=""){ // executing external commands
     execute(command.c_str());
