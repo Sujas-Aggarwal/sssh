@@ -19,7 +19,7 @@ void type(std::string arg){
     std::cout << arg << " is a shell builtin"<<std::endl;
   }
   else{
-    notFound(arg);
+    std::cout<<arg<<": not found"<<std::endl;
   }
 }
 
