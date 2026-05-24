@@ -64,9 +64,9 @@ void core(){
   else if (func=="type"){
     type(args);
   }
-  // else if (func=="pwd"){
-  //   pwd();
-  // }
+  else if (func=="pwd"){
+    pwd();
+  }
   else if (func=="cd" && processedCommand.size()>1){
     cd(processedCommand[1]);
   }
