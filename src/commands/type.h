@@ -2,17 +2,13 @@
 #include <string>
 #include <iostream>
 #include <cstdlib>
-#include<vector>
-#include<sstream>
-#include <globals/constants.h>
-#include <unistd.h>
+#include <vector>
+#include <sstream>
 #include <filesystem>
+#include <globals/constants.h>
+#include <helper/executer.h>
 
 namespace fs = std::filesystem;
-
-bool isExecutable(const char* path) { // useful to check if executable or not
-    return access(path, X_OK) == 0;
-}
 
 bool findFile(std::string path,std::string file){
     for (const auto& entry : fs::directory_iterator(path)) {
@@ -22,7 +18,6 @@ bool findFile(std::string path,std::string file){
     }
     return false;
 }
-
 
 // TODO: We need to add functionality in such a way that we can - 
 //1. get all the dir in PATH
