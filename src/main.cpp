@@ -1,14 +1,15 @@
 #include <iostream>
 #include <string>
 #include<set>
+#include <commands/echo.h>
 
 bool LOOP = true;
 
 const std::set<std::string> INBUILD_COMMANDS = {"echo","type","exit"};
 
-void echo(std::string arg){
-  std::cout<<arg<<std::endl;
-}
+// void echo(std::string arg){
+//   std::cout<<arg<<std::endl;
+// }
 
 void notFound(std::string command){
     std::cout<<command<<": command not found"<<std::endl;
@@ -43,6 +44,9 @@ void core(){
   }
   else if (command.substr(0,5)=="type "){
     type(command.substr(5,-1));
+  }
+  else if (command==""){
+    return;
   }
   else{
     notFound(command);
