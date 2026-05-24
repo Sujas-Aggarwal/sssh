@@ -4,6 +4,7 @@
 #include <commands/echo.h>
 #include <commands/type.h>
 #include <commands/pwd.h>
+#include <commands/cd.h>
 #include <globals/variables.h>
 #include <helper/executer.h>
 #include <vector>
@@ -63,8 +64,11 @@ void core(){
   else if (func=="type"){
     type(args);
   }
-  else if (func=="pwd"){
-    pwd();
+  // else if (func=="pwd"){
+  //   pwd();
+  // }
+  else if (func=="cd" && processedCommand.size()>1){
+    cd(processedCommand[1]);
   }
   else if (exec_path!=""){ // executing external commands
     execute(command.c_str());

@@ -1045,3 +1045,15 @@ dkms.conf
 *.dis
 
 vcpkg_installed
+
+
+# PErsonal
+.vscode
+.codecrafters
+codecrafters.yml
+ok
+shell
+a.out
+vcpkg-configuration.json
+vcpkg.json
+your_program.sh
